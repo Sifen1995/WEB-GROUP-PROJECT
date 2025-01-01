@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#CCE6FF ;
+   
+    
+}
+nav{
+    margin-left: 300px;
+}
+
+nav ul{
+    list-style-type: none;
+    
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+   
+}
+nav a{
+    color: #0056B3;
+    text-decoration: wavy;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+nav a:hover{
+   background-color:#80BFFF; 
+   border-radius: 7px; 
+   text-decoration: underline;
+}
+nav li{
+    float: right;
+}
+
+header { 
+   
+   display: flex;
+    padding: 1rem; 
+}
+header h1 {
+     text-align: center; 
+     color: #007BFF;    
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .hero {
+    position: relative;
+    background-image: url('../ASSETS/images/priscilla-du-preez-W3SEyZODn8U-unsplash.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    margin-left: 15px;
+    margin-right: 15px;
+
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)); /* Gradient overlay */
+    border-radius: 15px;
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin: 0 0 20px;
+  }
+  
+  .hero h1 span {
+    font-weight: bold;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .location-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .location-button span {
+    margin: 0 5px;
+  }
+  
+  .location-button:hover {
+    background-color: #0056b3;
+  }
+  h2{
+    margin-left: 20px;
+    color: #0056b3;
+  }
+
+  .events{
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px; /* Adjust the gap as needed */
+}
+.cards{
+    border: solid 3px ;
+    border-color: #80BFFF;
+    border-radius: 7px;
+   background-color:#80BFFF ;
+   height: auto;
+   margin-bottom: 10%;
+  
+}
+.imag-container{
+    margin-left: 10%;
+    margin-top: 6%;
+    
+}
+.body-container{
+    justify-items: center;
+}
+.cards img{
+    border-radius: 5px;
+}
+.reserv{
+    border-radius: 20%;
+    width: 25%;
+    padding: 3%;
+    margin-left: 35%;
+    margin-bottom: 10%;
+    background-color:#007BFF ;
+}
+.search{
+    margin-left: 400px;
+    margin-top: 30px;
+    
+  }
+  .search input{
+      width: 400px;
+      height: 10px;
+      padding: 10px;
+      border-color: #80BFFF;   
+  }
+  
