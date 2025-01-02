@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendee</title>
+ 
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/attendeeDashboard.css">
+</head>
+<body> 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Event Management System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+ 
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Events</a>
+        </li>
+        <li class="nav-item">
+          <button class="btn" >Logout</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <section class="hero-section">
+   
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+      <h1>Welcome to Your Event Dashboard</h1>
+      <p class="lead">Stay Informed. Stay Engaged.</p>
+    </div>
+  </section>
+  <section class="profile-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card profile-card"> 
+            <div class="card-body">
+              <h5 class="card-title text-center">Personal Information</h5>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <strong>Name:</strong> John Doe
+                </li>
+                <li class="list-group-item">
+                  <strong>Email:</strong> j@gmail.com
+                </li>
+                <li class="list-group-item">
+                  <strong>Phone:</strong> +251 911 234 567
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  
+   <section class="py-5">
+    <div class="container">
+      <h3 class="text-center mb-4">Your Upcoming Events</h3>
+      <div class="row">
+         
+        <div class="col-md-4">
+          <div class="card event-card">
+            <img src="images/tech.jpg" class="card-img-top" alt="Event 1">
+            <div class="card-body">
+              <h5 class="card-title">Tech Conference</h5>
+              <p class="card-text">Join us for an exciting tech conference with industry leaders and innovators.</p>
+              <p class="text-muted">Date: 25th February 2024</p>
+            </div>
+          </div>
+        </div>
+
+   
+        <div class="col-md-4">
+          <div class="card event-card">
+            <img src="images/art-exhibition.jpg" class="card-img-top" alt="Event 2">
+            <div class="card-body">
+              <h5 class="card-title">Art Exhibition</h5>
+              <p class="card-text">Experience the best of modern art from local artists.</p>
+              <p class="text-muted">Date: 10th March 2024</p>
+            </div>
+          </div>
+        </div>    
+        <div class="col-md-4">
+          <div class="card event-card">
+            <img src="images/music-festival.jpg" class="card-img-top" alt="Event 3">
+            <div class="card-body">
+              <h5 class="card-title">Music Festival</h5>
+              <p class="card-text">A celebration of music and culture with live performances.</p>
+              <p class="text-muted">Date: 30th March 2024</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h3 class="text-center mb-4">Your Last Events</h3>
+      <div class="row">
+        
+        <div class="col-md-4">
+          <div class="card event-card">
+            <img src="images/old-event.jpg" class="card-img-top" alt="Event 1">
+            <div class="card-body">
+              <h5 class="card-title">Old Event 1</h5>
+              <p class="card-text">This is a past event description.</p>
+              <p class="text-muted">Date: 15th January 2024</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card event-card">
+            <img src="images/old-event2.jpg" class="card-img-top" alt="Event 2">
+            <div class="card-body">
+              <h5 class="card-title">Old Event 2</h5>
+              <p class="card-text">Description for another past event.</p>
+              <p class="text-muted">Date: 5th December 2023</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card event-card">
+            <img src="images/old-event3.jpg" class="card-img-top" alt="Event 3">
+            <div class="card-body">
+              <h5 class="card-title">Old Event 3</h5>
+              <p class="card-text">A description of yet another past event.</p>
+              <p class="text-muted">Date: 1st November 2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>&copy; 2024 Event Management System. All rights reserved.</p>
+  </footer>  
+</body>
+</html>
