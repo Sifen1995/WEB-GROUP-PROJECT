@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color:#CCE6FF;    
+    background-color:#CCE6FF !important;    
 }
 nav{
     margin-left: 300px;
@@ -49,8 +49,7 @@ header h1 {
 
 }
 .search{
-    display: flex;
-   
+    display: flex;  
     margin-top: 30px;
     align-items: center;
     justify-content: center;

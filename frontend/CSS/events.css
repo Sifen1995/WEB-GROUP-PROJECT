@@ -2,9 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color:#CCE6FF ;
-   
-    
+    background-color:#CCE6FF !important ;
+      
 }
 nav{
     margin-left: 300px;
@@ -161,14 +160,36 @@ body {
     background-color:#007BFF ;
 }
 .search{
-    margin-left: 400px;
-    margin-top: 30px;
-    
-  }
-  .search input{
-      width: 400px;
-      height: 10px;
-      padding: 10px;
-      border-color: #80BFFF;   
-  }
-  
+  display: flex;  
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+
+}
+.search input{
+  width: 400px;
+  height: 40px;
+  padding: 10px;
+  border-color: #80BFFF; 
+  border-radius: 30px;  
+  margin: 16px 0;    
+}
+.search img{
+  width: 30px;
+  height: auto;
+  margin-left: 16px;  
+   
+}
+.search button{
+  border: none;
+  background-color: #CCE6FF;
+}
+.card-img-top{
+  width: 100%; 
+  height: 150px; 
+  object-fit: cover; 
+  padding: 10px;
+}
+.card{
+  background-color: #80BFFF !important;
+}
