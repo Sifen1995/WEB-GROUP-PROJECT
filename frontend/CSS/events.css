@@ -6,7 +6,8 @@ body {
       
 }
 nav{
-    margin-left: 300px;
+    margin-left: 350px;
+    margin-top: 15px;
 }
 
 nav ul{
@@ -32,15 +33,37 @@ nav a:hover{
 nav li{
     float: right;
 }
-
-header { 
-   
-   display: flex;
-    padding: 1rem; 
+.login{
+  position: absolute;
+  margin-left: 1100px;
+  padding: 10px;
+ margin-top: 15px;
+  
 }
-header h1 {
-     text-align: center; 
-     color: #007BFF;    
+.login button{   
+  border-radius: 6px;
+  background-color: #003C73;
+  width: 50px;
+   
+}
+.login a{
+  text-decoration: none;
+  color: #CCE6FF;
+}
+
+header {
+  padding-left: 12px;
+  display: flex;
+  flex-direction: row;
+}
+header p{
+  text-align: center; 
+  align-self: center;
+  padding:10px;
+  margin-top: 15px;
+  font-size: 30px;
+  color: #003C73;  
+
 }
 body {
     margin: 0;
@@ -192,4 +215,10 @@ body {
 }
 .card{
   background-color: #80BFFF !important;
+}
+footer{
+  text-align: center;
+  background-color: #003C73;
+  padding: 30px;
+  color: #CCE6FF;
 }
