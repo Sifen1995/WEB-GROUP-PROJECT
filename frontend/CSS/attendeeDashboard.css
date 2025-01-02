@@ -1,4 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color:#CCE6FF !important ;
+    
+}
+
+nav{
+  margin-left: 300px;
+}
+header {
+  padding-left: 12px;
+}
+header p{
+  align-self: center;
+  padding:10px;
+}
+
+
+nav ul{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+  display: flex;
  
+}
+nav a{
+  color: #0056B3;
+  text-decoration: wavy;
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
+nav a:hover{
+ background-color:#80BFFF; 
+ border-radius: 7px; 
+ text-decoration: underline;
+}
+
+header { 
+ 
+ display: flex;
+ flex-direction: row;
+  padding: 1rem; 
+}
+header h1 {
+   text-align: center; 
+   color: #007BFF;    
+
+}
 .hero-section {
     height: 100vh;
     background-image: url('../ASSETS/images/herouser.jpg');  
