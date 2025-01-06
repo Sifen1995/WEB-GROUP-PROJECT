@@ -7,10 +7,10 @@ body {
 }
 
 nav{
-  margin-left: 300px;
+  margin-left: 200px;
 }
 header {
-  padding-left: 12px;
+  padding-left: 5vw;
 }
 header p{
   align-self: center;
@@ -105,4 +105,7 @@ header h1 {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+  }
+  .current{
+    background-color: #88b1d7;
   }

@@ -49,3 +49,85 @@ eventForm.onsubmit = function (e) {
     // Close modal
     modal.style.display = "none";
 };
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const eventTableBody = document.getElementById('eventTableBody');
+    const eventModal = document.getElementById('eventModal');
+    const closeModalButton = document.querySelector('.close');
+    const eventForm = document.getElementById('eventForm');
+    let isEditing = false;
+    let currentRow;
+  
+    // Open modal for adding or editing
+    document.getElementById('addEventBtn').addEventListener('click', () => {
+      isEditing = false;
+      eventForm.reset();
+      eventModal.style.display = 'block';
+    });
+  
+    eventTableBody.addEventListener('click', (e) => {
+      if (e.target.classList.contains('edit-btn')) {
+        isEditing = true;
+        currentRow = e.target.closest('tr');
+        populateFormForEdit(currentRow);
+        eventModal.style.display = 'block';
+      } else if (e.target.classList.contains('delete-btn')) {
+        const row = e.target.closest('tr');
+        if (confirm('Are you sure you want to delete this event?')) {
+          eventTableBody.removeChild(row);
+        }
+      }
+    });
+  
+    closeModalButton.addEventListener('click', () => {
+      eventModal.style.display = 'none';
+    });
+  
+    window.addEventListener('click', (e) => {
+      if (e.target == eventModal) {
+        eventModal.style.display = 'none';
+      }
+    });
+  
+    eventForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(eventForm);
+      const newRowHtml = `
+        <tr>
+          <td>${formData.get('eventName')}</td>
+          <td>${formData.get('organizer')}</td>
+          <td>${formData.get('eventDate')}</td>
+          <td>${formData.get('category')}</td>
+          <td>
+            <button class="edit-btn">Edit</button> |
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>`;
+      
+      if (isEditing) {
+        currentRow.innerHTML = newRowHtml;
+      } else {
+        eventTableBody.insertAdjacentHTML('beforeend', newRowHtml);
+      }
+      eventModal.style.display = 'none';
+    });
+  
+    function populateFormForEdit(row) {
+      const cells = row.children;
+      eventForm.eventName.value = cells[0].textContent;
+      eventForm.organizer.value = cells[1].textContent;
+      eventForm.eventDate.value = cells[2].textContent;
+      eventForm.category.value = cells[3].textContent;
+    }
+  });
+  
