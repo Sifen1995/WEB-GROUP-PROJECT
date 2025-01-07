@@ -7,10 +7,10 @@ body {
 }
 
 nav{
-  margin-left: 200px;
+  margin-left: 4.5vw;
 }
 header {
-  padding-left: 5vw;
+  padding-left: 15px;
 }
 header p{
   align-self: center;
@@ -32,24 +32,30 @@ nav a{
   padding: 15px;
   display: block;
   text-align: center;
+  font-size: 0.96rem;
 }
 nav a:hover{
  background-color:#80BFFF; 
  border-radius: 7px; 
  text-decoration: underline;
 }
-
 header { 
- 
- display: flex;
- flex-direction: row;
-  padding: 1rem; 
+
+display: flex;
+flex-direction: row;
+padding: 1rem; 
 }
 header h1 {
-   text-align: center; 
-   color: #007BFF;    
+ text-align: center; 
+ color: #007BFF;    
 
 }
+nav ul li:nth-child(2) a  {
+  border-bottom: 2px solid #003C73;
+}
+
+
+
 .hero-section {
     height: 100vh;
     background-image: url('../ASSETS/images/herouser.jpg');  
@@ -79,16 +85,29 @@ header h1 {
     padding: 50px 0;
     background-color: #f9f9f9;
   }
+  
   .profile-card {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+  
   .profile-header {
     background-color: #007bff;
     color: white;
     padding: 20px;
     border-radius: 10px 10px 0 0;
     text-align: center;
+  }
+  
+  
+  #editForm input {
+    margin-bottom: 10px;
+  }
+  #editForm button {
+    margin-top: 10px;
+  }
+  .card-body span{
+    display: block;
   }
   .event-card {
     margin-bottom: 30px;
@@ -106,6 +125,14 @@ header h1 {
     height: 100px;
     border-radius: 50%;
   }
-  .current{
-    background-color: #88b1d7;
-  }
+
+  @media(min-width:768px){
+
+    nav{
+        margin-left: 33vw;
+    }
+
+    nav a{
+        padding: 15px 2vw;
+    }
+}

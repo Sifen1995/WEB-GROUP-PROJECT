@@ -5,9 +5,15 @@ body {
   background-color:#CCE6FF !important ;
     
 }
+header{
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+}
 nav{
   margin-top: 15px;
-  margin-left: 10vw;
+  margin-left: 1vw;
+  width: 80%;
 }
 
 nav ul{
@@ -32,10 +38,15 @@ nav a:hover{
 nav ul{
 display: flex;
 }
+nav ul li:nth-child(2) a {
+  border-radius: 6px;
+  font-weight: 800;
+}
+
 .login button{   
 border-radius: 6px;
 background-color: #003C73;
-width: 10vw;
+width: 12vw;
 height: 7vh;
 justify-content: center;
 margin-left: 1.5vw;
@@ -63,8 +74,9 @@ margin-top: 15px;
 font-size: 2.4vw;
 width: 20vw;
 color: #003C73;  
-
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -216,6 +228,8 @@ padding: 10px;
 .card{
 background-color: #80BFFF !important;
 }
+
+.card span{display: block;}
 footer{
 text-align: center;
 background-color: #003C73;
@@ -232,20 +246,20 @@ color: #CCE6FF;
 
 @media(min-width : 768px){
 
-nav{
-  margin-top: 19px;
-  margin-left: 40vw;
+  nav{
+    margin-top: 19px;
+    margin-left: 29vw;
 }
 
 
 .login button{   
-border-radius: 6px;
-background-color: #003C73;
-width: 8vw;
-height: 5vh;
-justify-content: center;
-margin-left: 1.5vw;
-margin-top: 2vh;
+  border-radius: 6px;
+  background-color: #003C73;
+  width: 8vw;
+  height: 5vh;
+  justify-content: center;
+  margin-left: 1.5vw;
+  margin-top: 2vh;
 
 }
 
@@ -260,8 +274,6 @@ margin-top: 2vh;
 
 
 
-
-/* Styling for the search results */
 .search-results {
   display: flex;
   flex-wrap: wrap;
@@ -303,7 +315,7 @@ margin-top: 2vh;
   padding: 5px 10px;
 }
 
-/* Responsive media queries */
+
 @media (max-width: 768px) {
   .search-results .card {
     flex: 1 1 calc(50% - 10px); 

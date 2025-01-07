@@ -23,13 +23,15 @@
   </head>
 
   <body>
+    
     <div class="admin-dashboard">
       <header class="admin-header">
         <p>Event Management System</p>
         <nav>
           <ul>
-            <li><a href="adminhome.html">Home</a></li>
-            <li><a class="current" href="adminDashebord.html">Dashboard</a></li>
+            <li><a class="current" href="adminhome.html">Home</a></li>
+  
+            <li><a class="current1" href="adminDashebord.html">Dashboard</a></li>
           </ul>
         </nav>
         <div class="logout">
@@ -37,6 +39,67 @@
         </div>
       </header>
       <hr />
+
+      <section class="personal-info-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="card personal-info-card">
+                        <div class="card-header text-center">
+                            <h4>Your Personal Information</h4>
+                        </div>
+                        <div class="card-body">
+                            <!-- Display Personal Info with IDs -->
+                            <ul class="list-group" id="personalInfoList">
+                                <li class="list-group-item">
+                                    <strong>ID:</strong> <span id="idDisplay">12345</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Name:</strong> <span id="nameDisplay">John Doe</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Email:</strong> <span id="emailDisplay">j@gmail.com</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Phone:</strong> <span id="phoneDisplay">+251 911 234 567</span>
+                                </li>
+                            </ul>
+                            
+                            <!-- Edit Button -->
+                            <div class="text-center mt-3">
+                                <button class="btn btn-primary" id="editBtn">Edit</button>
+                            </div>
+    
+                            <!-- Edit Form (Initially hidden) -->
+                            <div id="editForm" style="display: none; margin-top: 20px;">
+                                <h5>Edit Personal Information</h5>
+                                <form id="editInfoForm">
+                                    <div class="form-group">
+                                        <label for="nameInput">Name</label>
+                                        <input type="text" class="form-control" id="nameInput" value="John Doe">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="emailInput">Email</label>
+                                        <input type="email" class="form-control" id="emailInput" value="j@gmail.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phoneInput">Phone</label>
+                                        <input type="tel" class="form-control" id="phoneInput" value="+251 911 234 567">
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <button type="submit" class="btn btn-success">Save</button>
+                                        <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
 
       <div class="main-content">
         <section id="dashboard">
@@ -86,6 +149,7 @@
         </section>
       </div>
     </div>
+    
 
     <div id="eventModal" class="modal">
       <div class="modal-content">

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Attendee</title>
+  <title>Attendee Dashboard</title>
  
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../CSS/attendeeDashboard.css">
@@ -14,10 +14,10 @@
      
      <nav>
          <ul>
-             <li><a href="home.html">Home</a></li>
-             <li><a href="events.html">Events</a></li>
-             <li><a href="#">Profile</a></li>
-             <li><a href="#">Logout</a></li>
+             <li><a href="attendee-home.html">Home</a></li>
+             <li><a href="attendeeDashboard.html">Dashboard</a></li>
+             <li><a href="attendee-event.html">Events</a></li>
+             <li><a href="../home.html">Logout</a></li>
          </ul>
      </nav>
 </header>
@@ -33,7 +33,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-8">
-          <div class="card profile-card"> 
+          <div class="card profile-card">
             <div class="card-body">
               <h5 class="card-title text-center">Personal Information</h5>
               <ul class="list-group">
@@ -47,12 +47,43 @@
                   <strong>Phone:</strong> +251 911 234 567
                 </li>
               </ul>
+  
+              <!-- Edit Button -->
+              <div class="text-center mt-3">
+                <button class="btn btn-primary" id="editBtn">Edit</button>
+              </div>
+  
+              <!-- Edit Form (Initially hidden) -->
+              <div id="editForm" style="display: none; margin-top: 20px;">
+                <h5>Edit Personal Information</h5>
+                <form>
+                  <div class="form-group">
+                    <label for="editName">Name</label>
+                    <input type="text" class="form-control" id="editName" value="John Doe">
+                  </div>
+                  <div class="form-group">
+                    <label for="editEmail">Email</label>
+                    <input type="email" class="form-control" id="editEmail" value="j@gmail.com">
+                  </div>
+                  <div class="form-group">
+                    <label for="editPhone">Phone</label>
+                    <input type="tel" class="form-control" id="editPhone" value="+251 911 234 567">
+                  </div>
+                  <div class="form-group text-center">
+                    <button type="submit" class="btn btn-success">Save</button>
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                  </div>
+                </form>
+              </div>
+  
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>  
+  </section>
+  
+
    <section class="py-5">
     <div class="container">
       <h3 class="text-center mb-4">Your Upcoming Events</h3>
@@ -62,9 +93,9 @@
           <div class="card event-card">
             <img src="../ASSETS/images/tech.jpg" class="card-img-top" alt="Event 1">
             <div class="card-body">
-              <h5 class="card-title">Title</h5>
+              <h5 class="card-title">Event Title 1</h5>
               <p class="card-text">Description</p>
-              <p class="text-muted">Date: 25th <span>Location: </span></p>
+              <p class="text-muted">Date: <span>Location: </span></p>
             </div>
           </div>
         </div>
@@ -72,19 +103,20 @@
    
         <div class="col-md-4">
           <div class="card event-card">
-            <img src="../ASSETS/images/" class="card-img-top" alt="Event 2">
+            <img src="../ASSETS/images/tech.jpg" class="card-img-top" alt="Event 2">
             <div class="card-body">
-              <h5 class="card-title">Event Title</h5>
+              <h5 class="card-title">Event Title 2</h5>
               <p class="card-text">Description</p>
               <p class="text-muted">Date: <Span>Location: </Span></p>
             </div>
           </div>
-        </div>    
+        </div>  
+
         <div class="col-md-4">
           <div class="card event-card">
-            <img src="images/music-festival.jpg" class="card-img-top" alt="Event 3">
+            <img src="../ASSETS/images/tech.jpg" class="card-img-top" alt="Event 3">
             <div class="card-body">
-              <h5 class="card-title">Event title</h5>
+              <h5 class="card-title">Event title 3</h5>
               <p class="card-text">Description</p>
               <p class="text-muted">Date: <Span>Location</Span></p>
             </div>
@@ -100,31 +132,31 @@
         
         <div class="col-md-4">
           <div class="card event-card">
-            <img src="images/old-event.jpg" class="card-img-top" alt="Event 1">
+            <img src="../ASSETS/images/tech.jpg" class="card-img-top" alt="Event 1">
             <div class="card-body">
-              <h5 class="card-title">Event Title</h5>
+              <h5 class="card-title">Event Title 4</h5>
               <p class="card-text">Description</p>
-              <p class="text-muted">Date: 15th January 2024</p>
+              <p class="text-muted">Date: <span>Location: </span></p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card event-card">
-            <img src="images/old-event2.jpg" class="card-img-top" alt="Event 2">
+            <img src="../ASSETS/images/tech.jpg" class="card-img-top" alt="Event 2">
             <div class="card-body">
-              <h5 class="card-title">Event Title </h5>
+              <h5 class="card-title">Event Title 5</h5>
               <p class="card-text">Description</p>
-              <p class="text-muted">Date: 5th December 2023</p>
+              <p class="text-muted">Date: <span>Location: </span></p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card event-card">
-            <img src="images/old-event3.jpg" class="card-img-top" alt="Event 3">
+            <img src="../ASSETS/images/tech.jpg" class="card-img-top" alt="Event 3">
             <div class="card-body">
-              <h5 class="card-title">Old Event 3</h5>
+              <h5 class="card-title">Event Title 6</h5>
               <p class="card-text">A description of yet another past event.</p>
-              <p class="text-muted">Date: 1st November 2023</p>
+              <p class="text-muted">Date: <span>Location: </span></p>
             </div>
           </div>
         </div>
@@ -135,5 +167,21 @@
 <footer class="bg-dark text-white text-center py-3 mt-5">
     <p>&copy; 2024 Event Management System. All rights reserved.</p>
   </footer>  
+
+
+
+
+  <script>
+    document.getElementById('editBtn').addEventListener('click', function() {
+      document.getElementById('editForm').style.display = 'block';
+      document.getElementById('editBtn').style.display = 'none';
+    });
+  
+    document.getElementById('cancelBtn').addEventListener('click', function() {
+      document.getElementById('editForm').style.display = 'none';
+      document.getElementById('editBtn').style.display = 'inline-block';
+    });
+  </script>
+  
 </body>
 </html>
