@@ -1,25 +1,12 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { MongooseModule } from '@nestjs/mongoose';
 import { EvmModule } from './evm/evm.module';
-import { ServeStaticModule } from '@nestjs/serve-static';
-import { join } from 'path';
-
 
 @Module({
   imports: [
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', '..','...','frontend'), // Path to your frontend folder
-      serveRoot: '/', // Serve files at the root URL
-      renderPath: '/home.html', // Ensure it uses home.html explicitly
-    }),
-    EvmModule, // Import your existing EVM module
+    MongooseModule.forRoot('mongodb://localhost:27017/event-managment?appName=MongoDB+Compass&directConnection=true&serverSelectionTimeoutMS=2000'),
+ // Replace with your MongoDB connection string
+    EvmModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
-
-
-
-
