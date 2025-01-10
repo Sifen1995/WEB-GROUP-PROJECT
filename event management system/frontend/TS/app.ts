@@ -52,16 +52,16 @@ window.onclick = function (event: MouseEvent): void {
 // Handle form submission
 eventForm.onsubmit = function (e: SubmitEvent): void {
   e.preventDefault();
-  // Add logic to handle form data (e.g., save event details)
+  
   alert("Event Created Successfully!");
 
-  // Clear form inputs
+ 
   (eventForm.elements.namedItem("eventName") as HTMLInputElement).value = "";
   (eventForm.elements.namedItem("organizer") as HTMLInputElement).value = "";
   (eventForm.elements.namedItem("eventDate") as HTMLInputElement).value = "";
   (eventForm.elements.namedItem("category") as HTMLInputElement).value = "";
 
-  // Close modal
+   
   modal.style.display = "none";
 };
 
