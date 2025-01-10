@@ -13,9 +13,24 @@ export class AdminService {
     return this.adminModel.findOne({ email });
   }
 
-  async createAdmin(data: { email: string; password: string }): Promise<Admin> {
+  async createAdmin(data: { email: string; password: string; name: string }): Promise<Admin> {
     const hashedPassword = await bcrypt.hash(data.password, 10);
-    const newAdmin = new this.adminModel({ ...data, password: hashedPassword, role: 'admin' });
+    const newAdmin = new this.adminModel({
+      email: data.email,
+      password: hashedPassword,
+      name: data.name,
+      role: 'admin',
+    });
     return newAdmin.save();
+  }
+
+  async register(email: string, password: string, name: string): Promise<{ message: string; admin: Admin }> {
+    const existingAdmin = await this.findAdminByEmail(email);
+    if (existingAdmin) {
+      throw new Error('Admin with this email already exists');
+    }
+
+    const newAdmin = await this.createAdmin({ email, password, name });
+    return { message: 'Admin registered successfully', admin: newAdmin };
   }
 }

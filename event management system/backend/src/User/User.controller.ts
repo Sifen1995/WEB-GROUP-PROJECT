@@ -6,8 +6,8 @@ export class UserController {
     constructor(private readonly userService: UserService) {}
 
     @Post('register')
-    async register(@Body() body: { email: string; password: string }) {
-        return this.userService.register(body.email, body.password);
+    async register(@Body() body: { email: string; password: string ;name:string}) {
+        return this.userService.register(body.email, body.password,body.name);
     }
 
     @Post('login')

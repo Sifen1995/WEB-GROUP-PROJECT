@@ -1,15 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { User, UserDocument } from './schemas/User.schema';
-import { Event, EventDocument } from './schemas/Events.schema';
-import { Category, CategoryDocument } from './schemas/Category.schema';
-import { Reservation, ReservationDocument } from './schemas/Reservation.schema';
+import { Event, EventDocument } from '../Events/events.schema';
+import { Category, CategoryDocument } from '../Category/Category.schema';
+import { Reservation, ReservationDocument } from '../Reservation/Reservation.schema';
+import { User } from '../User/schemas/User.schema'; 
 
 @Injectable()
 export class EvmService {
     constructor(
-        @InjectModel(User.name) private userModel: Model<UserDocument>,
+        @InjectModel(User.name) private readonly userModel: Model<User>,
         @InjectModel(Event.name) private eventModel: Model<EventDocument>,
         @InjectModel(Category.name) private categoryModel: Model<CategoryDocument>,
         @InjectModel(Reservation.name) private reservationModel: Model<ReservationDocument>,

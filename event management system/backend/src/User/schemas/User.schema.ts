@@ -3,7 +3,9 @@ import { Document } from "mongoose";
 
 @Schema({ timestamps: true })
 export class User extends Document {
-    @Prop({ required: true })
+    @Prop({required:true})
+    name:string;
+    @Prop({ required: true,unique: true })
     email: string;
 
     @Prop({ required: true })
@@ -12,8 +14,6 @@ export class User extends Document {
     @Prop({ required: true, default: 'user' }) // Default role is 'user'
     role: string;
 
-    @Prop()
-    title: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

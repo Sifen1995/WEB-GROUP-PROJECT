@@ -12,9 +12,9 @@ export class UserService {
         private jwtService: JwtService,
     ) {}
 
-    async register(email: string, password: string): Promise<User> {
+    async register(email: string, password: string,name:string): Promise<User> {
         const hashedPassword = await bcrypt.hash(password, 10);
-        const newUser = new this.userModel({ email, password: hashedPassword });
+        const newUser = new this.userModel({ email, password: hashedPassword,name });
         return newUser.save();
     }
 
@@ -31,5 +31,7 @@ export class UserService {
     async validateUser(payload: { email: string; sub: string; role: string }): Promise<User> {
         return this.userModel.findOne({ _id: payload.sub });
     }
+
+    async findUserByEmail(email: string): Promise<User> { return this.userModel.findOne({ email }) as Promise<User>; }
 }
 

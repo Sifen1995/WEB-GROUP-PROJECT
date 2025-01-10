@@ -4,18 +4,17 @@ import { Document } from 'mongoose';
 
 @Schema()
 export class Admin extends Document {
-  @Prop({ required: true })
-  adminId: string;
-
   @Prop({ required: true, unique: true })
   email: string;
 
   @Prop({ required: true })
   password: string;
 
-  @Prop({ required: true, default: 'admin' })
+  @Prop({ default: 'admin' })
   role: string;
+
+  @Prop()
+  name: string;
 }
 
 export const AdminSchema = SchemaFactory.createForClass(Admin);
-export type AdminDocument = Admin & Document;

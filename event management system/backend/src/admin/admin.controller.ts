@@ -1,8 +1,8 @@
 // src/admin/admin.controller.ts
 import { Controller, Post, Body, UseGuards, Get, Req } from '@nestjs/common';
-import { AuthService } from '../evm/auth/auth.service';
-import { AdminService } from '../admin/admin.service';
-import { RolesGuard } from '../evm/auth/roles.guard';
+import { AuthService } from './auth/auth.service';
+import { AdminService } from './admin.service';
+import { RolesGuard } from './auth/roles.guard';
 import { SetMetadata } from '@nestjs/common';
 
 @Controller('admin')
@@ -20,6 +20,16 @@ export class AdminController {
     }
     const token = await this.authService.generateToken(admin);
     return { token };
+  }
+
+  @Post('register')
+  async register(@Body() body: { email: string; password: string; name: string }) {
+    try {
+      const result = await this.adminService.register(body.email, body.password, body.name);
+      return result;
+    } catch (error) {
+      return { message: error.message };
+    }
   }
 
   @UseGuards(RolesGuard)
