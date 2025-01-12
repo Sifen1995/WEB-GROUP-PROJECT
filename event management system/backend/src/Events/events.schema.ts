@@ -1,21 +1,21 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
-@Schema({ timestamps: true })
+@Schema({ timestamps: false })
 export class Event extends Document {
-  @Prop({ required: true })
+  @Prop({ required: false })
   title: string;
 
   @Prop()
   description: string;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   date: Date;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   category: string;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   organizer: string;
 }
 

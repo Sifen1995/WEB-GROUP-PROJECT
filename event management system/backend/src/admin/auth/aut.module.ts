@@ -5,10 +5,10 @@ import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './jwt.strategy';
-import { UserModule } from 'src/user/user.module';
+import { UserModule } from 'src/User/User.module';
 import { JwtAuthGuard } from './guards/jwt-auth.guard';
 import { AdminService } from 'src/admin/admin.service';
-import { AdminSchema } from '../schemas/admin.schema';
+import { AdminSchema } from '../schemas/Admin.schema';
 
 
 @Module({

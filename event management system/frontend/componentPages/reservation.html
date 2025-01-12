@@ -3,92 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reservation</title>
+    <title>Reservation</title>
     <link rel="stylesheet" href="../CSS/reservation.css">
-    
 </head>
 <body>
     <header>
       <a href="../componentPages/attendee-home.html" class="back-arrow">&#8592;</a>
-     </header>
-     <hr/>
-     <main>
+    </header>
+    <hr/>
+    <main>
         <div class="event-banner">
-            <img src="../ASSETS/images/hamza-nouasria-8z6sqG0RnXg-unsplash.jpg" alt="">
+            <img src="../ASSETS/images/hamza-nouasria-8z6sqG0RnXg-unsplash.jpg" alt="Event Banner">
         </div>
 
-        <div class="wraper">
-        <div class="event-description">
-            <h1>WORLD AFRIKA FESTIVAL ADDIS</h1>
-            <div class="description">
-            <h2>Date and Time</h2>
-            <p>January 4 · 8pm - January 5 · 3am EAT</p>
-           </div>
+        <div class="wrapper">
+            <div class="event-description">
+                <h1>WORLD AFRIKA FESTIVAL ADDIS</h1>
+                <div class="description">
+                    <h2>Date and Time</h2>
+                    <p>January 4 · 8pm - January 5 · 3am EAT</p>
+                </div>
 
-           <div class="description">
-            <h2>Organizer</h2>
-            <p>Habesha Entertaiment</p>
-           </div>
+                <div class="description">
+                    <h2>Organizer</h2>
+                    <p>Habesha Entertaiment</p>
+                </div>
 
-           <div class="description">
-            <h2>Location</h2>
-            <p>Ghion Hotel | Stadium <br>
-              Ras Desta Damtew Street Addis Ababa, Addis Ababa</p>
-           </div>
+                <div class="description">
+                    <h2>Location</h2>
+                    <p>Ghion Hotel | Stadium <br> Ras Desta Damtew Street Addis Ababa, Addis Ababa</p>
+                </div>
 
-           <div class="description">
-            <h2>About event</h2>
-            <p>WORLD AFRIKA ADDIS FESTIVAL is coming to Addis Ababa on Saturday, January 4th presented by Arada!</p>
-           </div>
-        </div>
+                <div class="description">
+                    <h2>About event</h2>
+                    <p>WORLD AFRIKA ADDIS FESTIVAL is coming to Addis Ababa on Saturday, January 4th presented by Arada!</p>
+                </div>
+            </div>
 
-        <div class="reservation">
-            <img src="../ASSETS/images/calendar.png" alt="">
-            <div>
-                <button type="button" class="reserveBtn">Reserv</button>
+            <div class="reservation">
+                <img src="../ASSETS/images/calendar.png" alt="Calendar Icon">
+                <div>
+                    <button type="button" class="reserveBtn">Reserve</button>
+                </div>
             </div>
         </div>
-        </div>   
 
         <div id="reservationModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <div class="checkout-form">
-            <h2>Contact information</h2>
-            <p>
-            
-              <span class="required">* Required</span>
-            </p>
-            <form>
-              <div class="form-row">
-                <input type="text" placeholder="First name *" required />
-                <input type="text" placeholder="Last name *" required />
-              </div>
-              <div class="form-row">
-                <input type="email" placeholder="Email address *" required />
-                <input type="email" placeholder="Confirm email *" required />
-              </div>
-             
-              <p class="terms">
-                By selecting Register, I agree to the
-                <a href="#">event managment Terms of Service</a>.
-              </p>
-              <button type="submit" class="register-button">Register</button>
-            </form>
-            <footer>
-              <p>Powered by <a href="#">event managment</a></p>
-            </footer>
-          </div>
-        </div>
-        </div>
-      
-     </main>
-    
-     <footer>
-      <p>&copy; 2024 Event Management System. All rights reserved.</p>
-  </footer>
-     
-    <script src="../TS/app.js"></script>
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="checkout-form">
+                    <h2>Contact information</h2>
+                    <p><span class="required">* Required</span></p>
+                    <form id="reservation-form">
+                        <div class="form-row">
+                            <input type="text" id="first-name" placeholder="First name *" required />
+                            <input type="text" id="last-name" placeholder="Last name *" required />
+                        </div>
+                        <div class="form-row">
+                            <input type="email" id="email" placeholder="Email address *" required />
+                            <input type="email" id="confirm-email" placeholder="Confirm email *" required />
+                        </div>
 
+                        <p class="terms">
+                            By selecting Register, I agree to the <a href="#">Event Management Terms of Service</a>.
+                        </p>
+                        <button type="submit" class="register-button">Register</button>
+                    </form>
+                    <footer>
+                        <p>Powered by <a href="#">Event Management</a></p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Event Management System. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal = document.getElementById("reservationModal");
+            const reserveBtn = document.querySelector(".reserveBtn");
+            const closeBtn = document.querySelector(".close");
+            const registerForm = document.getElementById("reservation-form");
+
+            // Open the modal
+            reserveBtn.addEventListener("click", () => {
+                modal.style.display = "block";
+            });
+
+            // Close the modal
+            closeBtn.addEventListener("click", () => {
+                modal.style.display = "none";
+            });
+
+            // Handle form submission
+            registerForm.addEventListener("submit", async (e) => {
+                e.preventDefault(); // Prevent default form submission
+
+                // Get form input values
+                const firstName = document.getElementById("first-name").value;
+                const lastName = document.getElementById("last-name").value;
+                const email = document.getElementById("email").value;
+                const confirmEmail = document.getElementById("confirm-email").value;
+
+                // Validation: Ensure emails match
+                if (email !== confirmEmail) {
+                    alert("Emails do not match!");
+                    return;
+                }
+
+                // Example user and event IDs (replace with actual IDs from your app)
+                const userId = "sampleUserId"; // Fetch logged-in user's ID dynamically
+                const eventId = "sampleEventId"; // Fetch current event's ID dynamically
+
+                // Prepare POST request payload
+                const reservationData = {
+                    userId,
+                    eventId,
+                    reservationDate: new Date().toISOString(),
+                };
+
+                try {
+                    // Send POST request to backend
+                    if(localStorage.getItem("token")!=null){
+                      const response = await fetch("http://localhost:3000/reservations", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(reservationData),
+                    });
+
+                   
+                        alert("Reservation successful!");
+                        modal.style.display = "none";
+                    
+                    }
+                  
+                } catch (error) {
+                    console.error("Error during reservation:", error);
+                    alert("An error occurred. Please try again later.");
+                }
+            });
+        });
+    </script>
 </body>
 </html>

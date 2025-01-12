@@ -14,20 +14,29 @@ export class UserService {
 
     async register(email: string, password: string,name:string): Promise<User> {
         const hashedPassword = await bcrypt.hash(password, 10);
+        const val= await bcrypt.compare(password, hashedPassword);
         const newUser = new this.userModel({ email, password: hashedPassword,name });
         return newUser.save();
     }
 
     async login(email: string, password: string): Promise<{ token: string }> {
         const user = await this.userModel.findOne({ email });
-        if (!user || !(await bcrypt.compare(password, user.password))) {
+        console.log(user);
+        if (!user) {
             throw new UnauthorizedException('Invalid credentials');
         }
+    
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        console.log(isPasswordValid);  
+        if (!isPasswordValid) {
+            throw new UnauthorizedException('Invalid credentials');
+        }
+    
         const payload = { email: user.email, sub: user._id, role: user.role };
         const token = this.jwtService.sign(payload);
         return { token };
     }
-
+    
     async validateUser(payload: { email: string; sub: string; role: string }): Promise<User> {
         return this.userModel.findOne({ _id: payload.sub });
     }

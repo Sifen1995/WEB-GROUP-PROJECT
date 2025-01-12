@@ -1,5 +1,5 @@
-import { Controller, Post, Body } from '@nestjs/common';
-import { UserService } from './user.service';
+import { Controller, Post, Body, BadRequestException } from '@nestjs/common';
+import { UserService } from './User.service';
 
 @Controller('users')
 export class UserController {
@@ -7,11 +7,15 @@ export class UserController {
 
     @Post('register')
     async register(@Body() body: { email: string; password: string ;name:string}) {
+        console.log('register', body);
         return this.userService.register(body.email, body.password,body.name);
     }
 
     @Post('login')
-    async login(@Body() body: { email: string; password: string }) {
+    async login(@Body() body: { email: string; password: string,role:string }) {
+        if (!body.email || !body.password) {
+            throw new BadRequestException('Email and password are required').message;
+        }
         return this.userService.login(body.email, body.password);
     }
 }

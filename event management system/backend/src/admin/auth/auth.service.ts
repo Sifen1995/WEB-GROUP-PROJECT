@@ -6,11 +6,11 @@ import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class AuthService {
-  constructor(private readonly jwtService: JwtService) {}
+  constructor(private readonly jwtService: JwtService) {}z
  
 
   async validateAdmin(admin: any, password: string): Promise<boolean> {
-    return bcrypt.compare(password, admin.password);
+    return bcrypt.compare(password, admin.password)&& admin.role=='admin';
   }
 
   async generateToken(admin: any): Promise<string> {
@@ -18,6 +18,13 @@ export class AuthService {
     return this.jwtService.sign(payload);
   }
 
+  async decodeToken(token: string): Promise<any> {
+    try {
+      return this.jwtService.verify(token);
+    } catch (error) {
+      error
+    }
+  }
   
 }
 
